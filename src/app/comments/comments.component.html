@@ -1,0 +1,19 @@
+<div class="container" >
+    <form (ngSubmit) = "Comment()">
+    <div><strong><h2> {{book.title}}</h2> </strong></div>
+    <div >
+            <label for="exampleFormControlTextarea1"><strong>Enter the comments here: </strong></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="newComment" [(ngModel)] = "newComment" rows="3"></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit Comment</button>
+    <br>
+    <div><h3>Comments</h3></div>
+    <div *ngIf = "book.comments_string.length > 0">
+        <div *ngFor = "let comment of book.comments_string; ">
+                {{comment}}
+                <br><br>
+        </div>
+    </div>
+</form>
+</div>
